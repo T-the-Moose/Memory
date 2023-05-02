@@ -1,3 +1,11 @@
+.py-2 {
+    background-image: url(/ressources/bannière.jpg);
+}
+
+body {
+    background-image: url(/ressources/fond_memory.jpg);
+    color: white;
+}
 h1 {
     text-align: center;
 }
@@ -28,17 +36,17 @@ h1 {
 .sectionFormulaire {
     padding: 1%;
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 50px;
-    background-color: black;
-    color: white;
+    justify-content: center;
+    border: solid white 3px;
+    border-radius: 10%;
+    margin: 5% 20% 5% 20%;
 }
 
-section {
+#sectionIndex {
     display: flex;
     justify-content: center;
     margin: 5% 20% 5% 20%;
-    border: solid black 3px;
+    border: solid white 3px;
     border-radius: 10%
 }
 
@@ -46,3 +54,86 @@ section {
     margin: 0vw 0vw 1vw 7vw;
     width: 30vw;
 }
+
+.fieldsetConnexion {
+    margin: 5% 20% 5% 20%;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Image profil ? */
+.question {
+    width: 5vw;
+    margin-left: 46%;
+    padding : 1%;
+    border: solid white;
+    border-radius: 50%;
+    
+}
+
+#sectionConnexion {
+    margin: 5% 20% 5% 20%;
+    border: solid white 3px;
+    border-radius: 10%
+}
+
+#profil {
+    margin: 5% 20% 5% 20%;
+    border: solid white 3px;
+    border-radius: 10%
+}
+
+.jouerNbCoup {
+    display: block;
+    text-align: center;
+}
+
+#imgError {
+    display: none;
+    width : 20px;
+    height: 20px;
+}
+
+#imgError1 {
+    display: none;
+    width : 20px;
+    height: 20px;
+}
+
+#imgError2 {
+    display: none;
+    width : 20px;
+    height: 20px;
+}
+
+#imgError3 {
+    display: none;
+    width : 20px;
+    height: 20px;
+}
+
+#tableauScore {
+    margin: 3vw 3vw 3vw 3vw;
+}
+
+#tableauJeu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3vw 3vw 3vw 3vw;
+    border-collapse: separate;
+}
+
+th {
+    border: solid white;
+    padding: 1vw 1vw 1vw 1vw;
+}
+
+td {
+    border: solid white;
+    padding: 1vw 1vw 1vw 1vw;
+}
+

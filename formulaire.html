@@ -11,17 +11,17 @@
 <body>
     <header>
         <div class="container-fluide">
-            <div class="bg-secondary py-2">
-                <h1 class="grost=Titre px-4">ENI - <strong>MEMORY</strong>- Page vers </h1>
+            <div class="bg-info py-2">
+                <h1 class="grost=Titre px-4">ENI - <strong>MEMORY</strong>- Formulaire </h1>
             </div>
             <nav class="menu">
                     <ul id="barreNav">
-                        <li class="liNav"><a class="logo_ENI"><img src="/asset_Images/logo_ENI.jpg" width="40" height="40"></a></li>
+                        <li class="liNav"><a class="logo_ENI"><img src="/ressources/logo-ENI.png" width="40" height="40"></a></li>
                         <li class="liNav"><a href="index.html">Accueil</a></li>
-                        <li class="liNav"><a href="formuaire.html">S'inscirre</a></li>
-                        <li class="liNav"><a href="#">Se connecter</a></li>
-                        <li class="liNav"><a href="#">Profil</a></li>
-                        <li class="liNav"><a href="#">Joueur</a></li>
+                        <li class="liNav"><a href="formulaire.html">S'inscirre</a></li>
+                        <li class="liNav"><a href="connexion.html">Se connecter</a></li>
+                        <li class="liNav"><a href="profil.html">Profil</a></li>
+                        <li class="liNav"><a href="jouer.html">Jouer</a></li>
                     </ul>
             </nav>
         </div>
@@ -30,33 +30,40 @@
     <main>
         <section class="sectionFormulaire">
             <form id="formulaire" action="#" methode="post">
-                <fieldset class="fieldset">
-                    <legend>Inscrivez-vous</legend>
+                <fieldset>
+                    <h2>Inscrivez-vous</h2>
                     <div>
                         <label for="nom">Nom utilisateur :</label>
                         <br>
-                        <input class="nom" type="text" id="nom" name="nom" placeholder="3 caractères minimum" required>
+                        <input class="nom" type="text" id="nom" name="nom" placeholder="3 caractères minimum" pattern="[A-Za-z0-9_]{1,3}" required/>
+                        <span id="nbCaract">Choisissez un pseudo contenant au moins 3 caractères</span>
+                        <img id="imgError" src="/ressources/error.svg">
                         <hr>
                     </div>
                     <div>
                         <label for="email">Entrez votre email</label>
                         <br>
-                        <input class="email" type="email" id="email" name="email" placeholder="Votre email" required>
+                        <input class="email" type="email" id="email" name="email" placeholder="Votre email" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}" required>
+                        <span id="emailVerif">Rentrez une adresse email valide</span>
+                        <img id="imgError1" src="/ressources/error.svg">
                         <hr>
                     </div>
                     <label for="password"> Mot de passe :</label>
                     <br>
                     <input class="password" type="password" id="mdp" name="mdp"
-                        title="caractère A-F/chiffre 0-7 / 4 caract uniquement" placeholder="Votre mot de passe"
-                        pattern="#" required>
+                        title="Au moins un symbole, un chiffre, ainsi que 6 caractères minimum" placeholder="Votre mot de passe"
+                        pattern="[A-Za-z0-9_][!@#$%^&*-]{1,6}" required>
+                        <span id="nbMdp">Au moins un symbole, un chiffre, ainsi que 6 caractères minimum.</span>
+                        <img id="imgError2" src="/ressources/error.svg">
                     <hr>
                     <div>
                         <label for="password"> Vérification mot de passe :</label>
                         <br>
-                        <input class="formmdp" type="password" id="mdp" name="repetermotdepasse"
+                        <input class="formmdp" type="password" id="mdpV" name="repetermotdepasse"
                             title="Au moins un symbole, un chiffre, ainsi que 6 caractères minimum"
                             placeholder="Tapez à nouveau votre mot de passe" pattern="#" required>
-                        <p>Au moins un symbole, un chiffre, ainsi que 6 caractères minimum.</p>
+                        <span id="verifMdp">Le mot de passe est identique</span>
+                        <img id="imgError3" src="/ressources/error.svg">
                         <hr>
                     </div>
                     <div>
