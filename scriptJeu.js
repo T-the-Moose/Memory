@@ -1,122 +1,61 @@
+// https://replit.com/@Giridharhackclu/Final-Memory-Game#style.css
+
+// Tableau des cartes retournées
+const tableauCartes=[
+	"/ressources/memory-legume/1.svg",
+	"/ressources/memory-legume/1.svg",
+	"/ressources/memory-legume/2.svg",
+	"/ressources/memory-legume/2.svg",
+	"/ressources/memory-legume/3.svg",
+	"/ressources/memory-legume/3.svg",
+	"/ressources/memory-legume/4.svg",
+	"/ressources/memory-legume/4.svg",
+	"/ressources/memory-legume/5.svg",
+	"/ressources/memory-legume/5.svg",
+	"/ressources/memory-legume/6.svg",
+	"/ressources/memory-legume/6.svg"
+];
+
 window.onload = init;
 
 function init() {
-
-}
-
-// Tableau des cartes 
-let motifsCartes=[1,1,2,2,3,3,4,4,5,5,6,6];
-
-// Tableau de l'état des cartes (0=cachée 1=retournée -1=enlevée)
-let etatsCartes=[0,0,0,0,0,0,0,0,0,0,0,0];
-
-// Tableau avec cartes retournées
-let cartesRetournees=[];
-
-// Variable 
-let nbPairesTrouvees = 0;
-
-// Tableau contenant les objets des éléments img de l'interface utilisateur
-let imgCartes=document.getElementById("tableauJeu").getElementsByTagName("img");	
-
-for(var i=0;i<imgCartes.length;i++){
-	imgCartes[i].noCarte=i; //Ajout de la propriété noCarte à l'objet img
-	imgCartes[i].onclick=function(){
-		controleJeu(this.noCarte);
-	}                      
-}
-
-initialiseJeu();
-
-function majAffichage(noCarte) {
-	switch(etatsCartes[noCarte]){
-		case 0:
-			imgCartes[noCarte].src="/ressources/dos_de_cartes.webp";
-			break;
-		case 1:
-			imgCartes[noCarte].src="carte"+motifsCartes[noCarte]+"/ressources/chiens/1.webp";
-			break;
-		case -1:
-			imgCartes[noCarte].style.visibility="hidden";
-			break;
+	let cartes = document.querySelectorAll('#tableauJeu .flip');
+	for (let i = 0; i < cartes.length; i++) {
+	  cartes[i].addEventListener('click', retournerCarte);
 	}
-}
+	shuffle(tableauCartes);
+  }
+
+// Comparaison cartes 
 
 
-function rejouer() {
-	alert("Bravo !");
-	location.reload();
-}
-
-function initialiseJeu() {
-	for(var position=motifsCartes.length-1; position>=1; position--){
-		var hasard=Math.floor(Math.random()*(position+1));
-		var sauve=motifsCartes[position];
-		motifsCartes[position]=motifsCartes[hasard];
-		motifsCartes[hasard]=sauve;
+// Retourner cartes
+function retournerCarte(event) {
+	let carte = event.target;
+	if (carte.classList.contains('flip')) {
+		// Retourner la carte en affichant la face visible
+		carte.classList.remove('flip');
+		carte.setAttribute("src", tableauCartes[parseInt(carte.id)]);
+	} else {
+		// Retourner la carte en affichant la face cachée
+		carte.classList.add('flip');
+		carte.setAttribute('src', '/ressources/dos_de_cartes.webp');
 	}
+	console.log(carte.id);
 }
 
-function controleJeu(noCarte) {
-    if(cartesRetournees.length<2) {
-    }
-    if(etatsCartes[noCarte]==0){
-        etatsCartes[noCarte]=1;
-        cartesRetournees.push(noCarte);
-        majAffichage(noCarte);
-    }
-    if(cartesRetournees.length==2){
-        var nouveauEtat=0;
-        if (motifsCartes[cartesRetournees[0]]==motifsCartes[cartesRetournees[1]]){
-            nouveauEtat=-1;
-            nbPairesTrouvees++;
-        }
-        etatsCartes[cartesRetournees[0]]=nouveauEtat;
-        etatsCartes[cartesRetournees[1]]=nouveauEtat;
-    }
+// Mélanger le tableau de carte
+function shuffle(tableauCartes) {
+	let i, j, tmp;
+	for (i = tableauCartes.length - 1; i > 0; i--) {
+		j = Math.floor(Math.random() * (i + 1));
+		tmp = tableauCartes[i];
+		tableauCartes[i] = tableauCartes[j];
+		tableauCartes[j] = tmp;
+	}
+	return tableauCartes;
 }
 
-setTimeout(function() {
-    majAffichage(cartesRetournees[0]);
-    majAffichage(cartesRetournees[1]);
-    cartesRetournees=[];
-    if(nbPairesTrouvees==10){
-        rejouer();
-    }
-},750);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// http://hironak.fr/article/memory/
-//https://github.com/SophieMdl/Memory
-// http://mathartung.xyz/isn/projet-javascript-pour-la-specialite-isn/jeu-de-memory/3.html

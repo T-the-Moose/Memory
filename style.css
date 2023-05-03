@@ -45,12 +45,14 @@ h1 {
 #sectionIndex {
     display: flex;
     justify-content: center;
-    margin: 5% 20% 5% 20%;
+    margin: 5vw 15vw 5vw 15vw;
     border: solid white 3px;
     border-radius: 10%
 }
 
 #imgMem {
+    display: flex;
+    justify-content: center;
     margin: 0vw 0vw 1vw 7vw;
     width: 30vw;
 }
@@ -91,6 +93,10 @@ h2 {
     text-align: center;
 }
 
+#imgENI {
+    width: 3vw;
+}
+
 #imgError {
     display: none;
     width : 20px;
@@ -116,7 +122,7 @@ h2 {
 }
 
 #tableauScore {
-    margin: 3vw 3vw 3vw 3vw;
+    margin: 3vw 3vw 3vw 25vw;
 }
 
 #tableauJeu {
@@ -128,6 +134,7 @@ h2 {
 
 img {
     width : 7vw;
+    cursor: pointer;
 }
 
 th {
@@ -140,3 +147,13 @@ td {
     padding: 1vw 1vw 1vw 1vw;
 }
 
+.flip {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    transform: rotateY(180deg);
+    width: 7vw;
+}
+
+.imgLegume {
+    width: 20vw;
+}

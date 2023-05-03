@@ -16,7 +16,7 @@
             </div>
             <nav class="menu">
                     <ul id="barreNav">
-                        <li class="liNav"><a class="logo_ENI"><img src="/ressources/logo-ENI.png" width="40" height="40"></a></li>
+                        <li class="liNav"><a class="logo_ENI"><img id="imgENI" src="/ressources/logo-ENI.png" width="40" height="40"></a></li>
                         <li class="liNav"><a href="index.html">Accueil</a></li>
                         <li class="liNav"><a href="formulaire.html">S'inscirre</a></li>
                         <li class="liNav"><a href="connexion.html">Se connecter</a></li>
@@ -32,67 +32,59 @@
         <table id="tableauScore">
             <thead>
               <tr>
-                <th>#</th>
-                <th>First</th>
-                <th>Last</th>
-                <th>Handle</th>
+                <th>colonne 1</th>
+                <th>colonne 2</th>
+                <th>colonne 3</th>
+                <th>colonne 4</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th>1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th>ligne 1</th>
+                <td>ligne 1</td>
+                <td>ligne 1</td>
+                <td>ligne 1</td>
               </tr>
               <tr>
-                <th>2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <th>ligne 2</th>
+                <td>ligne 2</td>
+                <td>ligne 2</td>
+                <td>ligne 2</td>
               </tr>
               <tr>
-                <th>3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
+                <th>ligne 3</th>
+                <td>ligne 3</td>
+                <td>ligne 3</td>
+                <td>ligne 3</td>
               </tr>
             </tbody>
           </table>
           <div class="jouerNbCoup">
             <p>Tentez de gagner avec le moins d'essais possible.</p>
-            <br>
             <p>Appuyez sur la <strong>barre d'espace</strong> pour relancer le jeu.</p>
-            <br>
             <!-- Faire nombre de coup sur JS -->
             <p>Nombre de coups : <span id="nbDeCoups">0</span></p>
         </div>
-        <!--Espace de jeu-->
         <table id="tableauJeu">
           <tr>
-            <td><img src="/ressources/dos_de_cartes.webp"/></td>
-            <td><img src="/ressources/dos_de_cartes.webp"/></td>
-            <td><img src="/ressources/dos_de_cartes.webp"/></td>
-            <td><img src="/ressources/dos_de_cartes.webp"/></td>
+            <td><img id="0" class="flip" src="/ressources/dos_de_cartes.webp"/></td>
+            <td><img id="1" class="flip" src="/ressources/dos_de_cartes.webp"/></td>
+            <td><img id="2" class="flip" src="/ressources/dos_de_cartes.webp"/></td>
+            <td><img id="3" class="flip" src="/ressources/dos_de_cartes.webp"/></td>
           </tr>
           <tr>
-            <td><img src="/ressources/dos_de_cartes.webp"/></td>
-            <td><img src="/ressources/dos_de_cartes.webp"/></td>
-            <td><img src="/ressources/dos_de_cartes.webp"/></td>
-            <td><img src="/ressources/dos_de_cartes.webp"/></td>
+            <td><img id="4" class="flip" src="/ressources/dos_de_cartes.webp"/></td>
+            <td><img id="5" class="flip" src="/ressources/dos_de_cartes.webp"/></td>
+            <td><img id="6" class="flip" src="/ressources/dos_de_cartes.webp"/></td>
+            <td><img id="7" class="flip" src="/ressources/dos_de_cartes.webp"/></td>
           </tr>
           <tr>
-            <td><img src="/ressources/dos_de_cartes.webp"/></td>
-            <td><img src="/ressources/dos_de_cartes.webp"/></td>
-            <td><img src="/ressources/dos_de_cartes.webp"/></td>
-            <td><img src="/ressources/dos_de_cartes.webp"/></td>
+            <td><img id="8" class="flip" src="/ressources/dos_de_cartes.webp"/></td>
+            <td><img id="9" class="flip" src="/ressources/dos_de_cartes.webp"/></td>
+            <td><img id="10" class="flip" src="/ressources/dos_de_cartes.webp"/></td>
+            <td><img id="11" class="flip" src="/ressources/dos_de_cartes.webp"/></td>
           </tr>
           </table>
-
-
-
-
-
     </main>
     <script src="script.js"></script>
     <script src="scriptJeu.js"></script>
