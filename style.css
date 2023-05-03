@@ -121,19 +121,22 @@ h2 {
 
 #tableauJeu {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    margin: 3vw 3vw 3vw 3vw;
+    margin: 3vw;
     border-collapse: separate;
 }
 
+img {
+    width : 7vw;
+}
+
 th {
-    border: solid white;
+    border: 1px solid white;
     padding: 1vw 1vw 1vw 1vw;
 }
 
 td {
-    border: solid white;
+    border: 1px solid white;
     padding: 1vw 1vw 1vw 1vw;
 }
 
