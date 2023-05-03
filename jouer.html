@@ -30,17 +30,19 @@
         <h2>Derniers meilleures scores :</h2>
         <br>
         <table id="tableauScore">
-            <thead>
+            <thead id="tHead">
               <tr>
-                <th>colonne 1</th>
-                <th>colonne 2</th>
-                <th>colonne 3</th>
-                <th>colonne 4</th>
+                <th>Pseudo</th>
+                <th>Score</th>
+                <th>Taille</th>
+                <th>Choix Memory</th>
+                <th>Date</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <th>ligne 1</th>
+                <td>ligne 1</td>
                 <td>ligne 1</td>
                 <td>ligne 1</td>
                 <td>ligne 1</td>
@@ -50,9 +52,11 @@
                 <td>ligne 2</td>
                 <td>ligne 2</td>
                 <td>ligne 2</td>
+                <td>ligne 2</td>
               </tr>
               <tr>
                 <th>ligne 3</th>
+                <td>ligne 3</td>
                 <td>ligne 3</td>
                 <td>ligne 3</td>
                 <td>ligne 3</td>
@@ -64,6 +68,7 @@
             <p>Appuyez sur la <strong>barre d'espace</strong> pour relancer le jeu.</p>
             <!-- Faire nombre de coup sur JS -->
             <p>Nombre de coups : <span id="nbDeCoups">0</span></p>
+            <p id="victoire">Vous avez gagné !</p>
         </div>
         <table id="tableauJeu">
           <tr>

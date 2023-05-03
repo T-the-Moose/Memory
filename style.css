@@ -20,6 +20,11 @@ h1 {
     display: inline;
 }
 
+label {
+    font-weight: bold;
+}
+
+
 .liNav a {
     display: inline;
     color: white;
@@ -123,6 +128,12 @@ h2 {
 
 #tableauScore {
     margin: 3vw 3vw 3vw 25vw;
+    border: thick double white;
+    text-align: center;
+}
+
+#tHead {
+    border: thick double white;
 }
 
 #tableauJeu {
@@ -138,12 +149,10 @@ img {
 }
 
 th {
-    border: 1px solid white;
     padding: 1vw 1vw 1vw 1vw;
 }
 
 td {
-    border: 1px solid white;
     padding: 1vw 1vw 1vw 1vw;
 }
 
@@ -154,6 +163,18 @@ td {
     width: 7vw;
 }
 
+td:hover {
+    -webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
 .imgLegume {
     width: 20vw;
+}
+
+#victoire {
+    font-weight: bold;
+    font-size: 7vw;
+    text-shadow: 1vw 2vw black;
+    display: none;
 }

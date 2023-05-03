@@ -16,6 +16,8 @@ const tableauCartes=[
 	"/ressources/memory-legume/6.svg"
 ];
 
+let cartesRetournees = [];
+
 window.onload = init;
 
 function init() {
@@ -24,10 +26,27 @@ function init() {
 	  cartes[i].addEventListener('click', retournerCarte);
 	}
 	shuffle(tableauCartes);
+	comparerCartes();
   }
 
-// Comparaison cartes 
-
+// Comparaison des cartes
+function comparerCartes() {
+    let carte1 = cartesRetournees[0];
+    let carte2 = cartesRetournees[1];
+    if (tableauCartes[parseInt(carte1.id)] === tableauCartes[parseInt(carte2.id)]) {
+        // Les cartes sont identiques, on laisse les cartes retournées
+        cartesRetournees = [];
+    } else {
+        // Les cartes sont différentes, on les retourne après 2 secondes
+        setTimeout(() => {
+            carte1.classList.add('flip');
+            carte2.classList.add('flip');
+            carte1.setAttribute('src', '/ressources/dos_de_cartes.webp');
+            carte2.setAttribute('src', '/ressources/dos_de_cartes.webp');
+            cartesRetournees = [];
+        }, 2000);
+    }
+}
 
 // Retourner cartes
 function retournerCarte(event) {
@@ -36,10 +55,15 @@ function retournerCarte(event) {
 		// Retourner la carte en affichant la face visible
 		carte.classList.remove('flip');
 		carte.setAttribute("src", tableauCartes[parseInt(carte.id)]);
+		cartesRetournees.push(carte);
+		if (cartesRetournees.length === 2) {
+            comparerCartes();
+        }
 	} else {
 		// Retourner la carte en affichant la face cachée
 		carte.classList.add('flip');
 		carte.setAttribute('src', '/ressources/dos_de_cartes.webp');
+		cartesRetournees.pop();
 	}
 	console.log(carte.id);
 }
@@ -56,6 +80,12 @@ function shuffle(tableauCartes) {
 	return tableauCartes;
 }
 
+/* Fonction victoire 
+function victoire() {
+	if (cartesRetournees) {
 
+	}
+}
 
+*/
 
