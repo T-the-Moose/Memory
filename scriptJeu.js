@@ -17,10 +17,12 @@ const tableauCartes=[
 ];
 
 let cartesRetournees = [];
+let compteurCoups = 0;
 
 window.onload = init;
 
 function init() {
+
 	let cartes = document.querySelectorAll('#tableauJeu .flip');
 	for (let i = 0; i < cartes.length; i++) {
 	  cartes[i].addEventListener('click', retournerCarte);
@@ -35,7 +37,7 @@ function comparerCartes() {
     let carte2 = cartesRetournees[1];
     if (tableauCartes[parseInt(carte1.id)] === tableauCartes[parseInt(carte2.id)]) {
         // Les cartes sont identiques, on laisse les cartes retournées
-        cartesRetournees = [];
+		cartesRetournees = [];
     } else {
         // Les cartes sont différentes, on les retourne après 2 secondes
         setTimeout(() => {
@@ -44,28 +46,34 @@ function comparerCartes() {
             carte1.setAttribute('src', '/ressources/dos_de_cartes.webp');
             carte2.setAttribute('src', '/ressources/dos_de_cartes.webp');
             cartesRetournees = [];
-        }, 2000);
+        }, 1000);
     }
+	// Vérification si toutes les cartes ont été retournées
+	let cartes = document.querySelectorAll('#tableauJeu .flip');
+	if (cartes.length === 0) {
+		victoire();
+	}
 }
 
 // Retourner cartes
 function retournerCarte(event) {
 	let carte = event.target;
-	if (carte.classList.contains('flip')) {
+	if (carte.classList.contains("flip")) {
 		// Retourner la carte en affichant la face visible
-		carte.classList.remove('flip');
+		carte.classList.remove("flip");
 		carte.setAttribute("src", tableauCartes[parseInt(carte.id)]);
 		cartesRetournees.push(carte);
 		if (cartesRetournees.length === 2) {
             comparerCartes();
+			compteurCoups++;
+			document.getElementById("nbDeCoups").textContent = "Nombre de coups : " + compteurCoups;
         }
 	} else {
 		// Retourner la carte en affichant la face cachée
-		carte.classList.add('flip');
-		carte.setAttribute('src', '/ressources/dos_de_cartes.webp');
+		carte.classList.add("flip");
+		carte.setAttribute("src", "/ressources/dos_de_cartes.webp");
 		cartesRetournees.pop();
 	}
-	console.log(carte.id);
 }
 
 // Mélanger le tableau de carte
@@ -80,12 +88,13 @@ function shuffle(tableauCartes) {
 	return tableauCartes;
 }
 
-/* Fonction victoire 
+// Fonction victoire 
 function victoire() {
-	if (cartesRetournees) {
-
-	}
+    let cartes = document.querySelectorAll("#tableauJeu .selected");
+    if (cartes.length === tableauCartes.length) {
+		compteurCoups++;
+        alert("Vous avec gagné en " + compteurCoups + " coups");
+    }
 }
 
-*/
 

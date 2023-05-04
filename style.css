@@ -3,7 +3,7 @@
 }
 
 body {
-    background-image: url(/ressources/fond_memory.jpg);
+    background-image: url(/ressources/background.webp);
     color: white;
 }
 h1 {
@@ -23,7 +23,6 @@ h1 {
 label {
     font-weight: bold;
 }
-
 
 .liNav a {
     display: inline;
@@ -163,6 +162,7 @@ td {
     width: 7vw;
 }
 
+
 td:hover {
     -webkit-transform: scale(1.2);
 	transform: scale(1.2);
@@ -172,9 +172,6 @@ td:hover {
     width: 20vw;
 }
 
-#victoire {
-    font-weight: bold;
-    font-size: 7vw;
-    text-shadow: 1vw 2vw black;
-    display: none;
+.disable-click {
+    pointer-events: none;
 }
