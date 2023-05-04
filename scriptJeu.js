@@ -29,6 +29,7 @@ function init() {
 	}
 	shuffle(tableauCartes);
 	comparerCartes();
+
   }
 
 // Comparaison des cartes
@@ -106,3 +107,10 @@ function victoire() {
 	compteurCoups = -1;
 }
 
+document.addEventListener('keydown', function(event) {
+	if (event.code === 'Space') {
+	  location.reload();
+	}
+  });
+
+  

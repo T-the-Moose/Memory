@@ -14,6 +14,37 @@ h1 {
     margin: 3vw;
 }
 
+
+label {
+    text-decoration: underline;
+}
+
+.nom {
+    background-color: transparent;
+    color:white;
+    border:none;
+}
+
+.email {
+    background-color: transparent;
+    color:white;
+    border:none;
+}
+
+.password {
+    background-color: transparent;
+    color:white;
+    border:none;
+}
+
+.formmdp {
+    background-color: transparent;
+    color:white;
+    border:none;
+}
+
+
+
 #barreNav {
     list-style-type: none;
     padding-left: 1vw;
@@ -47,7 +78,20 @@ label {
     justify-content: center;
     border: solid white 3px;
     border-radius: 10%;
-    margin: 5% 20% 5% 20%;
+    margin: 5vw 15vw 5vw 15vw;
+}
+
+.btn1 {
+    background-color: green;
+    border:none;
+    margin-left: 5vw;
+    color: white;
+}
+
+.btn2 {
+    background-color: brown;
+    border:none;
+    margin-left: 5vw;
 }
 
 #sectionIndex {
@@ -102,7 +146,8 @@ h2 {
 }
 
 #imgENI {
-    width: 3vw;
+    width: 2vw;
+    height: 2vw;
 }
 
 #imgError {
@@ -131,18 +176,18 @@ h2 {
 
 #tableauScore {
     text-align: center;
-    margin-left: 35vw;
-    margin-bottom: 1vw;
+    border: solid white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
     border: solid white;
 }
 
-#tHead {
-    border: thick double white;
+.ligne {
+    border: solid white;
 }
-tbody {
-    border: thick double white;
-}
-
 
 #tableauJeu {
     display: flex;
@@ -175,12 +220,18 @@ td {
 td:hover {
     -webkit-transform: scale(1.2);
 	transform: scale(1.2);
+    cursor: pointer;
 }
 
 .imgLegume {
     width: 20vw;
 }
 
-.disable-click {
-    pointer-events: none;
+#faible, #moyen, #fort {
+    display: inline-block;
+    width: 30%;
+    margin-top: 1vw;
+    text-align: center;
 }
+
+
