@@ -33,21 +33,27 @@ function init() {
 
 // Comparaison des cartes
 function comparerCartes() {
+
     let carte1 = cartesRetournees[0];
     let carte2 = cartesRetournees[1];
-    if (tableauCartes[parseInt(carte1.id)] === tableauCartes[parseInt(carte2.id)]) {
-        // Les cartes sont identiques, on laisse les cartes retournées
-		cartesRetournees = [];
-    } else {
-        // Les cartes sont différentes, on les retourne après 2 secondes
-        setTimeout(() => {
-            carte1.classList.add('flip');
-            carte2.classList.add('flip');
-            carte1.setAttribute('src', '/ressources/dos_de_cartes.webp');
-            carte2.setAttribute('src', '/ressources/dos_de_cartes.webp');
-            cartesRetournees = [];
-        }, 1000);
-    }
+
+	if (carte1 && carte2) {
+		if (tableauCartes[parseInt(carte1.id)] === tableauCartes[parseInt(carte2.id)]) {
+			// Les cartes sont identiques, on laisse les cartes retournées
+			cartesRetournees = [];
+		} else {
+			// Les cartes sont différentes, on les retourne après 2 secondes
+			setTimeout(() => {
+				carte1.classList.add('flip');
+				carte2.classList.add('flip');
+				carte1.setAttribute('src', '/ressources/dos_de_cartes.webp');
+				carte2.setAttribute('src', '/ressources/dos_de_cartes.webp');
+				carte1.addEventListener("click", retournerCarte);
+				carte2.addEventListener("click", retournerCarte);
+				cartesRetournees = [];
+			}, 1000);
+		}
+	}
 	// Vérification si toutes les cartes ont été retournées
 	let cartes = document.querySelectorAll('#tableauJeu .flip');
 	if (cartes.length === 0) {
@@ -57,8 +63,10 @@ function comparerCartes() {
 
 // Retourner cartes
 function retournerCarte(event) {
+	if (cartesRetournees.length == 2) return;
 	let carte = event.target;
 	if (carte.classList.contains("flip")) {
+		carte.removeEventListener("click", retournerCarte);
 		// Retourner la carte en affichant la face visible
 		carte.classList.remove("flip");
 		carte.setAttribute("src", tableauCartes[parseInt(carte.id)]);
@@ -95,6 +103,6 @@ function victoire() {
 		compteurCoups++;
         alert("Vous avec gagné en " + compteurCoups + " coups");
     }
+	compteurCoups = -1;
 }
-
 

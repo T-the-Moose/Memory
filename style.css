@@ -10,6 +10,10 @@ h1 {
     text-align: center;
 }
 
+.reglesJeu {
+    margin: 3vw;
+}
+
 #barreNav {
     list-style-type: none;
     padding-left: 1vw;
@@ -126,20 +130,25 @@ h2 {
 }
 
 #tableauScore {
-    margin: 3vw 3vw 3vw 25vw;
-    border: thick double white;
     text-align: center;
+    margin-left: 35vw;
+    margin-bottom: 1vw;
+    border: solid white;
 }
 
 #tHead {
     border: thick double white;
 }
+tbody {
+    border: thick double white;
+}
+
 
 #tableauJeu {
     display: flex;
     justify-content: center;
-    margin: 3vw;
     border-collapse: separate;
+    margin-bottom: 3vw;
 }
 
 img {
