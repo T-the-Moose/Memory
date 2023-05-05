@@ -1,4 +1,4 @@
-// https://replit.com/@Giridharhackclu/Final-Memory-Game#style.css
+
 
 // Tableau des cartes retournées
 const tableauCartes=[

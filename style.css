@@ -73,7 +73,7 @@ label {
 }
 
 .liNav a:hover {
-    background-color: green;
+    background-color: #960124;
 }
 
 .sectionFormulaire {
@@ -85,7 +85,7 @@ label {
 }
 
 .btn-success {
-    margin-left: 11vw;;
+    margin-left: 2vw;;
 }
 
 .btn1 {
