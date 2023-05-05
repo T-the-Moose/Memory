@@ -47,8 +47,8 @@ function comparerCartes() {
 			setTimeout(() => {
 				carte1.classList.add('flip');
 				carte2.classList.add('flip');
-				carte1.setAttribute('src', '/ressources/dos_de_cartes.webp');
-				carte2.setAttribute('src', '/ressources/dos_de_cartes.webp');
+				carte1.setAttribute("src", "/ressources/dos_de_carte_space.jpg");
+				carte2.setAttribute("src", "/ressources/dos_de_carte_space.jpg");
 				carte1.addEventListener("click", retournerCarte);
 				carte2.addEventListener("click", retournerCarte);
 				cartesRetournees = [];
@@ -80,7 +80,7 @@ function retournerCarte(event) {
 	} else {
 		// Retourner la carte en affichant la face cachée
 		carte.classList.add("flip");
-		carte.setAttribute("src", "/ressources/dos_de_cartes.webp");
+		carte.setAttribute("src", "/ressources/dos_de_carte_space.jpg");
 		cartesRetournees.pop();
 	}
 }
@@ -107,6 +107,7 @@ function victoire() {
 	compteurCoups = -1;
 }
 
+// Recharger la page en appuyant sur "espace"
 document.addEventListener('keydown', function(event) {
 	if (event.code === 'Space') {
 	  location.reload();

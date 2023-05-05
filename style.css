@@ -1,3 +1,7 @@
+header, main {
+    font-family: "Bruno Ace SC", sans-serif;
+}
+
 .py-2 {
     background-image: url(/ressources/bannière.jpg);
 }
@@ -73,12 +77,15 @@ label {
 }
 
 .sectionFormulaire {
-    padding: 1%;
-    display: flex;
-    justify-content: center;
+    margin: 5vw 20vw 5vw 20vw;
     border: solid white 3px;
     border-radius: 10%;
-    margin: 5vw 15vw 5vw 15vw;
+    padding: 3vw;
+
+}
+
+.btn-success {
+    margin-left: 11vw;;
 }
 
 .btn1 {
@@ -102,11 +109,17 @@ label {
     border-radius: 10%
 }
 
-#imgMem {
+#imageMemory {
     display: flex;
     justify-content: center;
-    margin: 0vw 0vw 1vw 7vw;
+    margin: 0vw 2vw 0vw 2vw;
     width: 30vw;
+}
+
+#imageTaille {
+    margin-bottom: 1vw;
+    width: 30vw;
+    border-radius: 10%;
 }
 
 .fieldsetConnexion {
@@ -118,7 +131,6 @@ h2 {
     font-weight: bold;
 }
 
-/* Image profil ? */
 .question {
     width: 5vw;
     margin-left: 46%;
@@ -135,7 +147,7 @@ h2 {
 }
 
 #profil {
-    margin: 5% 20% 5% 20%;
+    margin: 5vw 20vw 5vw 20vw;
     border: solid white 3px;
     border-radius: 10%
 }
@@ -144,6 +156,11 @@ h2 {
     display: block;
     text-align: center;
 }
+
+.selected {
+    border-radius: 1vw;
+}
+
 
 #imgENI {
     width: 2vw;
@@ -193,12 +210,20 @@ th {
     display: flex;
     justify-content: center;
     border-collapse: separate;
-    margin-bottom: 3vw;
+    margin: 0vw 30vw 3vw 30vw;
+    border: solid white;
+
+}
+
+#imgMem {
+    cursor: pointer;
+    margin-left: 12vw;
+    margin-bottom: 1vw;
+    width: 30vw;
 }
 
 img {
-    width : 7vw;
-    cursor: pointer;
+    width: 7vw;
 }
 
 th {
@@ -221,10 +246,6 @@ td:hover {
     -webkit-transform: scale(1.2);
 	transform: scale(1.2);
     cursor: pointer;
-}
-
-.imgLegume {
-    width: 20vw;
 }
 
 #faible, #moyen, #fort {
